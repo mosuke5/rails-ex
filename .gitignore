@@ -18,6 +18,7 @@
 !/tmp/.keep
 log/
 tmp/
+vendor/bundle
 
 # Ignore Byebug command history file.
 .byebug_history

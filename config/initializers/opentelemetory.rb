@@ -2,8 +2,7 @@ require 'opentelemetry/sdk'
 require 'opentelemetry/exporter/jaeger'
 
 OpenTelemetry::SDK.configure do |c|
-  c.use 'OpenTelemetry::Instrumentation::Rails'
-  c.use 'OpenTelemetry::Instrumentation::Mysql2'
+  c.use_all
   c.add_span_processor(
     OpenTelemetry::SDK::Trace::Export::BatchSpanProcessor.new(
       exporter: OpenTelemetry::Exporter::Jaeger::AgentExporter.new(host: 'localhost', port: 6831)
